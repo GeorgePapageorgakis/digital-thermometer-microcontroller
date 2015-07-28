@@ -14,7 +14,7 @@ display symbols with integrated control circuit with one or two lines (eg LCD wi
 and displayed the corresponding indication.
 
 **Complete Circuit**
-![Main circuit](/digital-thermometer-microcontroller/blob/master/circuit.JPGraw=true "Digital Thermometer")
+![Main circuit](/digital-thermometer-microcontroller/blob/master/circuit.JPG?raw=true "Digital Thermometer")
 
 **Powering**
 
