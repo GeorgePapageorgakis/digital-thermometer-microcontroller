@@ -6,38 +6,38 @@
 .EQU LCD_E=PIND7
 
 .org $0000
- jmp RESET			 ; Reset Handler
- jmp EXT_INT0 		 ; IRQ0 Handler
- jmp EXT_INT1 		 ; IRQ1 Handler
- jmp TIM2_COMP 		 ; Timer2 Compare Handle
- jmp TIM2_OVF 		 ; Timer2 Overflow Handler
- jmp TIM1_CAPT		 ; Timer1 Capture Handler
- jmp TIM1_COMPA 	 ; Timer1 CompareA Handler
- jmp TIM1_COMPB 	 ; Timer1 CompareB Handler
- jmp TIM1_OVF 		 ; Timer1 Overflow Handler
- jmp TIM0_OVF 		 ; Timer0 Overflow Handler
- jmp SPI_STC 		 ; SPI Transfer Complete Handler
- jmp USART_RXC 		 ; UART RX Complete Handler
- jmp USART_DRE 		 ; UDR Empty Handler
- jmp USART_TXC 		 ; UART TX Complete Handler
- jmp ADC_CONV 		 ; ADC Conversion Complete Interrupt
- jmp EE_RDY			 ; EEPROM Ready Handler
- jmp ANA_COMP 		 ; Analog Comparator Handler
- jmp TWI			 ; Twowire serial interface
- jmp INT2_			 ; External interrupt request 2
- jmp TIMER0_COMP 	 ; Timer/counter0 Compare match	
+ jmp RESET		; Reset Handler
+ jmp EXT_INT0		; IRQ0 Handler
+ jmp EXT_INT1 		; IRQ1 Handler
+ jmp TIM2_COMP 		; Timer2 Compare Handle
+ jmp TIM2_OVF 		; Timer2 Overflow Handler
+ jmp TIM1_CAPT		; Timer1 Capture Handler
+ jmp TIM1_COMPA 	; Timer1 CompareA Handler
+ jmp TIM1_COMPB 	; Timer1 CompareB Handler
+ jmp TIM1_OVF 		; Timer1 Overflow Handler
+ jmp TIM0_OVF 		; Timer0 Overflow Handler
+ jmp SPI_STC 		; SPI Transfer Complete Handler
+ jmp USART_RXC 		; UART RX Complete Handler
+ jmp USART_DRE 		; UDR Empty Handler
+ jmp USART_TXC 		; UART TX Complete Handler
+ jmp ADC_CONV 		; ADC Conversion Complete Interrupt
+ jmp EE_RDY		; EEPROM Ready Handler
+ jmp ANA_COMP 		; Analog Comparator Handler
+ jmp TWI		; Twowire serial interface
+ jmp INT2_		; External interrupt request 2
+ jmp TIMER0_COMP 	; Timer/counter0 Compare match	
  jmp SPM_RDY
 
 
 RESET:
-CLI 			 	;Disable INTERRUPTS
+CLI 			 ;Disable INTERRUPTS
 
 LDI R20,255 		;Port C output
 OUT DDRC,R20
 OUT DDRD,R20		;Port D output
 ;-------------------------------------------------------------------------------------------------------------	
 
-LDI R20,HIGH(RAMEND) ;Enable Stack
+LDI R20,HIGH(RAMEND) 	;Enable Stack
 OUT SPH,R20
 LDI R20,LOW(RAMEND)
 OUT SPL,R20
@@ -61,7 +61,7 @@ RCALL  LCD_INIT
 ;TIMER  for every 30 second routine call to read ADC
 ;CRYSTAL FREQ./PRESCALLER=COUNT  12.8MHZ/1024=12500 COUNTS=  1 SEC  
 
-LDI R19,1			; First time counter is 1
+LDI R19,1		; First time counter is 1
 
 LDI R20,0X08		;bit3 0CF1B (output compare B match flag)
 OUT TIFR,R20
@@ -99,26 +99,26 @@ LDI ZH,HIGH(SYMBF*2)
 LDI ZL,LOW(SYMBF*2)
 
 RCALL LCD_WAIT
-LDI R16,0XC0			 ;SET DDRAM ADDRESS LINE LCD line2
+LDI R16,0XC0		;SET DDRAM ADDRESS LINE LCD line2
 RCALL LCD_CMD
 LDI R20,15
 	
 RCALL SHOW	
-RCALL TIM1_COMPB ; 		Subroutine Call interrupt as a simple routine
+RCALL TIM1_COMPB 	;Subroutine Call interrupt as a simple routine
 	
-SEI						;ACTIVATION OF INTERRUPTS
+SEI			;ACTIVATION OF INTERRUPTS
 
-WAIT:					;LOOP 
+WAIT:			;LOOP 
 RJMP WAIT
 
 SHOW:
 REPE:	RCALL LCD_WAIT
-	LPM					;Store in R0 value pointed by Z
+	LPM			;Store in R0 value pointed by Z
 	MOV R16,R0
 	RCALL LCD_WRITE_DATA
 			
 	ADIW ZH:ZL,1		;Inc by 1 the address to be read from the Table
-	DEC R20				;Repeat until the end
+	DEC R20			;Repeat until the end
 	BRNE REPE
 		
 RET		
@@ -157,7 +157,7 @@ LCD_READ_ADDRESS:
 	NOP
 	NOP
 	NOP
-	IN R16,PINC			;Load of pinC in R16
+	IN R16,PINC		;Load of pinC in R16
  	LDI R17,255
 	OUT DDRC,R17		;Output port C	
 	CBI PORTD,LCD_RW	;R/W of portD -> 0
@@ -236,10 +236,10 @@ SBIS ADCSR,ADIF 		;skip if ADIF is set (when transformation is finished -> set)
 	RJMP WAITADC
 
 	IN R24,ADCL 
-	IN R25,ADCH			;For the sampling results
+	IN R25,ADCH		;For the sampling results
 
 	RCALL SELECTION
-	LDI R19,6			;Reload the counter
+	LDI R19,6		;Reload the counter
 
 NOT_30_SEC_YET:		
 RETI
@@ -253,23 +253,23 @@ SELECTIO:
 	LDI YH,0X00
 	LDI YL,0X00
 	
-	ADIW	R25:R24,4 		;add 4 to R24-R25 (ADCH-ADCL)
+	ADIW	R25:R24,4 	;add 4 to R24-R25 (ADCH-ADCL)
 
-	LSR R25					;for the 8 MSB resolution
+	LSR R25			;for the 8 MSB resolution
 	ROR R24
 	
-AGAIN:	CP R24,YL			;compare the value of ADC with matching
+AGAIN:	CP R24,YL		;compare the value of ADC with matching
 	BRNE NEXT			
-	CP R25,YH				;address of LUT
+	CP R25,YH		;address of LUT
 	BRNE NEXT
 
-RCALL VISUALISE 			;its R25:R24=Y and Z points to LUT to the corresponding temp value
+RCALL VISUALISE 		;its R25:R24=Y and Z points to LUT to the corresponding temp value
 RJMP OK
 
 NEXT:	ADIW YH:YL,1 
 
-ADIW ZH:ZL,6				;R30-R31 Celsious		 	
-ADIW XH:XL,6				;R28-R29 Farenheit (per 6 slots in the LUT)												 								
+ADIW ZH:ZL,6			;R30-R31 Celsious		 	
+ADIW XH:XL,6			;R28-R29 Farenheit (per 6 slots in the LUT)												 								
 	
 EDO:	CPI YL,0X9C			
 	BRNE AGAIN
@@ -304,12 +304,12 @@ RCALL LCD_WAIT
 	RCALL LCD_WAIT
 	LDI R16,0XC6 
 	RCALL LCD_CMD
-				
+	
 	LDI R20,6
 	MOV ZL,XL	
 	MOV ZH,XH
 
-REP2:	RCALL LCD_WAIT	;For the second line in LCD
+REP2:	RCALL LCD_WAIT		;For the second line in LCD
 	LPM
 	MOV R16,R0
 	RCALL LCD_WRITE_DATA
