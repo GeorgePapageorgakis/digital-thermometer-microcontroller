@@ -40,7 +40,7 @@ For values ​​of the components we have:
 
 **IC1** LM358N  ST
 
-![Alt text](/digital-thermometer-microcontroller/LM358N  ST.jpg "Optional Title")
+![Image of Yaktocat](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM358N%20%20ST.jpg)
 
 
 **IC2**	MEGA16-P Atmel
