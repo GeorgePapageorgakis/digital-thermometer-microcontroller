@@ -39,7 +39,8 @@ For values ​​of the components we have:
 **C7** 100	nF 	ceramic
 
 **IC1** LM358N  ST
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
+![Alt text](/digital-thermometer-microcontroller/LM358N  ST.jpg "Optional Title")
 
 
 **IC2**	MEGA16-P Atmel
