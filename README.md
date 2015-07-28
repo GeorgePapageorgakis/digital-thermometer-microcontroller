@@ -26,10 +26,10 @@ to 5V, that we get by putting an lm358N in connection with potentiometers.
 
 **Voltage Adder**
 
-To problem we face in this circuit is that our sensor outputs and negative voltages, so you have to sum the absolute maximum negative value so as to have 0V as smaller value to the output of the adder.
-To solve this problem put an effector in connection adder.
+To problem we face in this circuit is that our sensor outputs the negative voltages, so we have to sum the absolute maximum value so as to have 0V as smaller value to the output of the adder.
+To solve this problem put an οperational αmplifier in adder connection.
 
-For values ​​of the components we have:
+For the values of the components we have:
 
 * **C1** 10    mF 	electrolytic
 * **C2** 10    mF 	electrolytic
