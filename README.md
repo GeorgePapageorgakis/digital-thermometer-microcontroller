@@ -8,9 +8,9 @@ display symbols with integrated control circuit with one or two lines (eg LCD wi
 
 **The thermometer has the following characteristics:**
 
-1.The temperature is sampled every 30 seconds
-2.The system must manage and negative temperatures.
-3.With the touch of a button switches to the scale of temperature between Celsius and Fahrenheit 
+1. The temperature is sampled every 30 seconds
+2. The system must manage and negative temperatures.
+3. With the touch of a button switches to the scale of temperature between Celsius and Fahrenheit 
 and displayed the corresponding indication.
 
 **Complete Circuit**
