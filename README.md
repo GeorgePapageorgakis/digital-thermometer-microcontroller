@@ -2,7 +2,7 @@
 Design and implementation of a simple digital thermometer using Atmel MEGA16-P microcontroller
 
 Design and implementation of a digital thermometer using an AVR microcontroller and a thermometer 
-eg LM35 the National). The temperature reading is expressed to one decimal digit in liquid crystal 
+(eg LM35 the National). The temperature reading is expressed to one decimal digit in liquid crystal 
 display symbols with integrated control circuit with one or two lines (eg LCD withi controller 
 (2x16) Datavision 1624451FBLY).
 
