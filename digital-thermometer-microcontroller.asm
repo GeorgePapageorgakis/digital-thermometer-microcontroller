@@ -1,3 +1,12 @@
+;   digital-thermometer-microcontroller.asm
+;   	A simple implementation of a digital thermometer 
+;	using Atmel MEGA16-P microcontroller
+;
+;	
+;    @author George Papageorgakis
+;    @version 1.0 2/2007
+;
+
 .INCLUDE "M16DEF.INC"
 
 .EQU LCD_ON=PIND4			
