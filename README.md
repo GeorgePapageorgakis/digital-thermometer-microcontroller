@@ -30,38 +30,36 @@ To solve this problem put an effector in connection adder.
 
 For values ​​of the components we have:
 
-**C1** 10	mF 	electrolytic
-**C2** 10	mF 	electrolytic
-**C3** 22	pF 	ceramic
-**C4** 22	pF 	ceramic
-**C5** 0.1	mF 	ceramic
-**C6** 0.33	mF 	ceramic
-**C7** 100	nF 	ceramic
+* **C1** 10  mF 	electrolytic
+* **C2** 10  mF 	electrolytic
+* **C3** 22  pF 	ceramic
+* **C4** 22  pF 	ceramic
+* **C5** 0.1 mF 	ceramic
+* **C6** 0.33 mF 	ceramic
+* **C7** 100  nF 	ceramic
 
-**IC1** LM358N  ST
+**IC1** LM358N ST
 
-![Image of Yaktocat](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM358N%20%20ST.jpg)
-
+![LM358N ST](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM358N%20%20ST.jpg)
 
 **IC2**	MEGA16-P Atmel
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
-
+![MEGA16-P Atmel](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/MEGA16-P%20%20Atmel.jpg)
 
 **IC3**	ICL7660 Intersil
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![ICL7660 Intersil](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICL7660%20Intersil.jpg)
  
 **IC4** LM7805C-V ST electronics
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![LM7805C-V ST electronics](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM7805C-V%20%20ST%20electronics.jpg)
 
 **IC5** LM35 National
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![LM35 National](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM35%20National.jpg)
 
-**L1**	10μH		inductor-neosid
-**Q1**	12MHz		XTAL    AEC
-**R1**	100KOhm			1%      
-**R2**	100KOhm			1%
-**R3**	100KOhm			1%
-**R4**	100KOhm			1%
-**R5**	100KOhm			1%
-**R6**	100KOhm		precise trimmer  
-**R7**	10KOhm		trimmer 
+* **L1**	10μH		inductor-neosid
+* **Q1**	12MHz		XTAL    AEC
+* **R1**	100KOhm			1%      
+* **R2**	100KOhm			1%
+* **R3**	100KOhm			1%
+* **R4**	100KOhm			1%
+* **R5**	100KOhm			1%
+* **R6**	100KOhm		precise trimmer  
+* **R7**	10KOhm		trimmer 
