@@ -15,7 +15,7 @@ and displayed the corresponding indication.
 
 **Complete Circuit**
 
-![Main circuit](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/circuit.JPG)
+![Main circuit](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/circuit.JPG)
 
 **Powering**
 
@@ -41,23 +41,23 @@ For values ​​of the components we have:
 
 **IC1** LM358N ST
 
-![LM358N ST](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM358N%20%20ST.jpg)
+![LM358N ST](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/LM358N%20%20ST.jpg)
 
 **IC2**	MEGA16-P Atmel
 
-![MEGA16-P Atmel](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/MEGA16-P%20%20Atmel.jpg)
+![MEGA16-P Atmel](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/MEGA16-P%20%20Atmel.jpg)
 
 **IC3**	ICL7660 Intersil
 
-![ICL7660 Intersil](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICL7660%20Intersil.jpg)
+![ICL7660 Intersil](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/ICL7660%20Intersil.jpg)
  
 **IC4** LM7805C-V ST electronics
 
-![LM7805C-V ST electronics](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM7805C-V%20%20ST%20electronics.jpg)
+![LM7805C-V ST electronics](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/LM7805C-V%20%20ST%20electronics.jpg)
 
 **IC5** LM35 National
 
-![LM35 National](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/LM35%20National.jpg)
+![LM35 National](https://github.com/GeorgePapageorgakis/digital-thermometer-microcontroller/blob/master/ICs/LM35%20National.jpg)
 
 * **L1**	10  μH		   inductor-neosid
 * **Q1**	12  MHz		  XTAL AEC
